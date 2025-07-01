@@ -18,5 +18,7 @@ int main() {
     
 }//end main function
 ```
-
+## FIX CODE
+```c++
 ![](lab1.jpg)
+```
