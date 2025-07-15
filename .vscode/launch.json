@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/LEGION/OneDrive/Documents/GitHub/ENGCC304",
-      "program": "c:/Users/LEGION/OneDrive/Documents/GitHub/ENGCC304/build/Debug/outDebug",
+      "cwd": "c:/Users/Thinkpad/OneDrive/Documents/GitHub/ENGCC304/lab03",
+      "program": "c:/Users/Thinkpad/OneDrive/Documents/GitHub/ENGCC304/lab03/build/Release/outRelease",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
