@@ -19,11 +19,11 @@ int main() {
     printf( "Enter N : " ) ;
     scanf( "%d" , &n ) ;
 
-    int arr[n] ;
+    int arr[ n ] ;
 
     for ( int i = 0 ; i < n ; i++ ) {
-        printf( "Enter value[%d] : " , i ) ;
-        scanf( "%d" , &arr[i] ) ;
+        printf( "Enter value[ %d ] : " , i ) ;
+        scanf( "%d" , &arr[ i ] ) ;
     }
 
     printf( "Index:  " ) ;
@@ -34,8 +34,8 @@ int main() {
 
     printf( "Array:  " ) ;
     for ( int i = 0 ; i < n ; i++ ) { 
-        if ( isPrime( arr[i] ) ) {
-            printf( "%2d" , arr[i] ) ;
+        if ( isPrime( arr[ i ] ) ) {
+            printf( "%2d" , arr[ i ] ) ;
         } 
         else {
             printf( "%2s " , "#" ) ;
@@ -44,4 +44,4 @@ int main() {
     printf( "\n" ) ;
 
     return 0  ;
-}
+}//end function
