@@ -1,43 +1,45 @@
-#include  <stdio.h>   
+#include <stdio.h>
+#include <math.h>   // ใช้ฟังก์ชัน pow() สำหรับเลขยกกำลัง
 
-int  main()  {          // ฟังก์ชันหลักของโปรแกรม
-    int  number ;       // ตัวแปรเก็บตัวเลขที่ผู้ใช้ป้อน
-    int  temp ;         // ตัวแปรชั่วคราวใช้ในการคำนวณ
-    int  digits = 0 ;   // ตัวแปรเก็บจำนวนหลักของตัวเลข
-    int  sum = 0 ;      // ตัวแปรเก็บผลรวมของแต่ละหลักยกกำลัง digits
+// ฟังก์ชันตรวจสอบว่าเป็น Armstrong Number หรือไม่
+void checkArmstrong( int num ) {
+    int original = num ;   // เก็บค่าตัวเลขเดิมไว้
+    int sum = 0 ;          // เก็บผลรวมเลขยกกำลังของแต่ละหลัก
+    int count = 0 ;        // เก็บจำนวนหลักของตัวเลขชั่วคราว
+    int temp = num ;       // ใช้ temp สำหรับการนับจำนวนหลัก
 
-    printf( "Enter Number:\n" ) ;   // แสดงข้อความให้ผู้ใช้ป้อนตัวเลข
-    scanf( "%d", &number ) ;        // รับค่าตัวเลขจากผู้ใช้
-
-    temp = number ;                // เก็บค่าตัวเลขไว้ในตัวแปร temp สำหรับนับจำนวนหลัก
-
-    // นับจำนวนหลักของตัวเลข
-    while ( temp > 0 )  {   
-        digits++ ;                 // เพิ่มจำนวนหลักทีละ 1
-        temp /= 10 ;               // ตัดหลักท้ายออก
+    // นับจำนวนหลัก
+    while ( temp > 0 ) {
+        temp = temp / 10 ;
+        count++ ;
     }
 
-    temp = number ;                // นำตัวเลขกลับมาที่ temp เพื่อคำนวณผลรวม
+    temp = num ;  // รีเซ็ตค่า temp เป็นเลขเดิม
 
-    // คำนวณผลรวมของแต่ละหลักยกกำลัง digits
-    while ( temp > 0 )  {   
-        int digit = temp % 10 ;    // ดึงหลักสุดท้ายของตัวเลข
-
-        int result = 1 ;                           // ตัวแปรเก็บผลคูณยกกำลัง
-        for ( int i = 0 ; i < digits ; i++ )  {    // คำนวณเลขยกกำลังด้วยลูป
-            result *= digit ;                      // คูณ digit ซ้ำ digits ครั้ง
-        }
-
-        sum += result ;       // นำผลลัพธ์มาบวกเข้ากับ sum
-        temp /= 10 ;          // ตัดหลักท้ายออก
+    // หาผลรวมของเลขยกกำลังตามจำนวนหลัก
+    while ( temp > 0 ) {
+        int digit = temp % 10 ;                   // แยกหลักสุดท้าย
+        sum += ( int )pow( digit , count ) ;           // ยกกำลังแล้วบวกเข้าผลรวม
+        temp = temp / 10 ;                        // ตัดหลักสุดท้ายออก
     }
 
-    // ตรวจสอบว่าผลรวมเท่ากับตัวเลขเดิมหรือไม่
-    if ( sum == number )  {   
-        printf( "Pass.\n" ) ;       // ถ้าเท่ากัน แสดงว่าเป็น Armstrong
-    }  else  {   
-        printf( "Not Pass.\n" ) ;   // ถ้าไม่เท่ากัน แสดงว่าไม่ใช่ Armstrong
+    // ตรวจสอบว่าผลรวมตรงกับเลขเดิมไหม
+    if ( sum == original ) {
+        printf( "Pass.\n" ) ;
+    } else {
+        printf( "Not Pass.\n" ) ;
     }
+}
 
-    return 0 ;   // จบโปรแกรม
+int main() {
+    int num ;
+
+    // รับค่าตัวเลขจากผู้ใช้
+    printf( "Enter Number:\n" ) ;
+    scanf( "%d", &num ) ;
+
+    // เรียกใช้ฟังก์ชันตรวจสอบ
+    checkArmstrong( num ) ;
+
+    return 0 ;
 }
