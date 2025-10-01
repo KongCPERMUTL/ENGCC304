@@ -14,4 +14,4 @@ int main() {
     printf( "Area = %.1f\n", area ) ;
 
     return 0 ;
-}
+}  // end function
