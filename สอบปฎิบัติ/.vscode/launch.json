@@ -8,8 +8,8 @@
       "args": [],
       "stopAtEntry": false,
       "externalConsole": true,
-      "cwd": "c:/Users/Thinkpad/OneDrive/Documents/GitHub/ENGCC304/lab01",
-      "program": "c:/Users/Thinkpad/OneDrive/Documents/GitHub/ENGCC304/lab01/build/Debug/outDebug",
+      "cwd": "c:/Users/Thinkpad/OneDrive/Documents/GitHub/ENGCC304/สอบปฎิบัติ",
+      "program": "c:/Users/Thinkpad/OneDrive/Documents/GitHub/ENGCC304/สอบปฎิบัติ/build/Debug/outDebug",
       "MIMode": "gdb",
       "miDebuggerPath": "gdb",
       "setupCommands": [
